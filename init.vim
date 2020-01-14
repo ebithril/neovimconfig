@@ -9,6 +9,13 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+
+Plug 'jeetsukumaran/vim-pythonsense'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
@@ -26,8 +33,35 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <space> za
+
 vnoremap . :normal.<CR>
 
 nmap <leader>o :FZF<CR>
+nmap <leader>f :ALEFix<CR>
 
 autocmd! bufwritepost init.vim source %
+
+au BufNewFile,BufRead *.py
+	\ set expandtab 	|" replace tabs with spaces
+	\ set autoindent 	|" copy indent when starting a new line
+	\ set tabstop=4
+	\ set softtabstop=4
+	\ set shiftwidth=4
+
+au BufNewFile,Bufread *.py
+	\ set foldmethod=indent
+
+let g:ale_linters = {
+	\ 'python': ['flake8', 'pylint'],
+\}
+
+let g:ale_fixers = {
+	\ 'python': ['standardrb']
+\}
+
+let g:ale_fix_on_save = 1
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
