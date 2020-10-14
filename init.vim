@@ -17,14 +17,17 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 set termguicolors
 
 colorscheme NeoSolarized
-set background=dark
+set background=light
 
 let g:airline_theme="solarized"
+let g:airline_solarized_bg="light"
 
 let mapleader = ","
 
@@ -39,6 +42,8 @@ vnoremap . :normal.<CR>
 
 nmap <leader>o :FZF<CR>
 nmap <leader>f :ALEFix<CR>
+
+tnoremap <Esc> <C-\><C-n>
 
 autocmd! bufwritepost init.vim source %
 
