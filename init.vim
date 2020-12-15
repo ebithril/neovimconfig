@@ -70,3 +70,8 @@ let g:ale_fix_on_save = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+set colorcolumn=120
+
+" add padding to make things readable at the edge of the screen
+set foldcolumn=10
