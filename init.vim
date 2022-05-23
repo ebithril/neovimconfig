@@ -14,7 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-Plug 'dense-analysis/ale'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -57,16 +56,6 @@ au BufNewFile,BufRead *.py
 au BufNewFile,Bufread *.py
 	\ set foldmethod=indent
 
-let g:ale_linters = {
-	\ 'python': ['flake8', 'pylint'],
-\}
-
-let g:ale_fixers = {
-	\ 'python': ['standardrb']
-\}
-
-let g:ale_fix_on_save = 1
-
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
@@ -74,4 +63,4 @@ let g:cpp_class_decl_highlight = 1
 set colorcolumn=120
 
 " add padding to make things readable at the edge of the screen
-set foldcolumn=10
+set foldcolumn=5
