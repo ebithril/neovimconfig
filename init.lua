@@ -1,8 +1,2 @@
-require('user/plugin')
-require('user/options')
-require('user/mason')
-require('user/rusttools')
-require('user/diagnostics')
-require('user/treesitter')
-require('user/keymap')
-require('user/cmp')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
